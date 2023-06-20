@@ -22,3 +22,6 @@ Under "Printer setiings" and "General", there will be a tab to set the bed shape
 Final note, my T2 has a nozzle diameter of 0.8. Make sure to change any nozzle diameters according to your machine.
 
 <img width="619" alt="Bildschirmfoto 2023-06-21 um 01 09 25" src="https://github.com/Victini-0001/E3D-ToolChanger-Superslicer-Profiles/assets/59373347/6d74e435-7a4f-4fd8-9d2a-3b1ce65751a9">
+
+Find the latest Superslicer
+https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.5
