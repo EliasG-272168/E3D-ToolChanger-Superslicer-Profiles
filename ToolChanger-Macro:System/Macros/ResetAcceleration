@@ -1,0 +1,3 @@
+M566 X480 Y480					; Set maximum instantaneous speed changes (mm/min)
+M203 X36000 Y36000 				; Set maximum speeds (mm/min)
+M201 X6000 Y6000 				; Set accelerations (mm/s^2)
