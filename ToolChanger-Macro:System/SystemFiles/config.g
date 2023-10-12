@@ -143,7 +143,7 @@ M307 H3 R1.071 K0.221:0.041 D6.33 E1.35 S1.00 B0 V21.3		; PID tune T2
 M307 H4 R3.886 K0.463:0.379 D2.58 E1.35 S1.00 B0 V21.3		; PID tune T3
 
 ; Pressure advance
-M572 D0:1 S0.041 					; pressure advance T0 & T1 DD HEMERA
+M572 D0:1 S0.045 					; pressure advance T0 & T1 DD HEMERA
 M572 D2 S0.62 						; pressure advance T2 BWDN HEMERA
 M572 D3 S0.053 						; pressure advance T3 OMNIADROP V2.1
 
