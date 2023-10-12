@@ -1,7 +1,7 @@
 # E3D-ToolChanger-Superslicer-Profiles
 I upload my Superslicer Configs for the E3D toolchanger
 
-**IMPORTANT NOTE:**
+**IMPORTANT NOTES FOR BOTH PRUSA & SUPERSLICER:**
 
 In the "custom G-code" section, the brush.g can be changed/removed as the macro is specific to my machine and you may need more/less.
 The brush.g command can be found in "Start G-code" and "Tool change G-code".
@@ -23,8 +23,14 @@ Final note, my T2 has a nozzle diameter of 0.8. Make sure to change any nozzle d
 
 <img width="619" alt="Bildschirmfoto 2023-06-21 um 01 09 25" src="https://github.com/Victini-0001/E3D-ToolChanger-Superslicer-Profiles/assets/59373347/6d74e435-7a4f-4fd8-9d2a-3b1ce65751a9">
 
-Find the latest Superslicer:
+**THE PRUSASLICER LAYERS ARE IN MM AS GENERATED WIDTHS USING % DOESNT WORK FOR THIS APPLICATION**
+
+
+Find the latest SuperSlicer:
 https://github.com/supermerill/SuperSlicer/releases/tag/2.5.59.2
 
-last "stable" Superslicer release (has working vase mode)
+last "stable" Superslicer release (has working vase mode (not working arachne))
 https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.5
+
+Find the latest PrusaSlicer:
+https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.6.1
