@@ -36,7 +36,7 @@ M92 X100 Y100 Z800 C91.022 E391.9:391.2:392:472.4			; Set steps per mm assuming 
 M350 E16:16:16:16 I1 										; Configure microstepping with interpolation
 M350 C16 I10												; Configure microstepping without interpolation
 M350 X16 Y16 Z16 I1											; Configure microstepping with interpolation
-M566 X480 Y480 Z240 C2 E900:900:1020:900						; Set maximum instantaneous speed changes (mm/min)
+M566 X480 Y480 Z240 C2 E900:900:1020:900					; Set maximum instantaneous speed changes (mm/min)
 M203 X36000 Y36000 Z1200 C7500 E5000:5000:5000:5000			; Set maximum speeds (mm/min)
 M201 X6000 Y6000 Z400 C500 E2500:2500:2500:2500				; Set accelerations (mm/s^2)
 M906 X1800 Y1800 Z1330 I30   								; Idle motion motors to 30%
@@ -51,7 +51,7 @@ M558 P8 C"zstop" H3 F360 I0 T20000 	; Set Z probe type to switch, the axes for w
 G31 P200 X0 Y0 Z0	 				; Set Z probe trigger value, offset and trigger height
 M557 X10:290 Y20:180 S40 			; Define mesh grid
 
-;Stall Detection
+; Stall Detection
 M915 X Y S3 F0 H400 R4700				; X / Y Axes
 
 ; Heaters
@@ -60,19 +60,19 @@ M950 H0 C"bedheat" T0											; Bed heater
 M143 H0 S225 													; Set temperature limit for heater 0 to 225C
 M140 H0															; Bed heater is heater 0
 
-M308 S1 P"e0temp" Y"pt1000" A"T0" 							 	; Set thermistor
+M308 S1 P"e0temp" Y"pt1000" A"T0" 							 	; Set PT1000 sensor
 M950 H1 C"e0heat" T1											; Extruder 0 heater
 M143 H1 S510 													; Set temperature limit for heater 1 to 500C
 
-M308 S2 P"e1temp" Y"pt1000" A"T1" 		 						; Set thermistor
+M308 S2 P"e1temp" Y"pt1000" A"T1" 		 						; Set PT1000 sensor
 M950 H2 C"e1heat" T2											; Extruder 0 heater
 M143 H2 S510 													; Set temperature limit for heater 2 to 500C
 
 M308 S3 P"e2temp" Y"thermistor" A"T2" T100000 B4725 C7.06e-8 	; Set thermistor
 M950 H3 C"duex.e2heat" T3										; Extruder 0 heater
-M143 H3 S410 													; Set temperature limit for heater 3 to 400C
+M143 H3 S360 													; Set temperature limit for heater 3 to 350C
 
-M308 S4 P"e3temp" Y"pt1000" A"T3" 								; Set thermistor
+M308 S4 P"e3temp" Y"pt1000" A"T3" 								; Set PT1000
 M950 H4 C"duex.e3heat" T4										; Extruder 0 heater
 M143 H4 S510 													; Set temperature limit for heater 4 to 500C
 
@@ -104,15 +104,6 @@ M950 F6 C"duex.fan6"
 M950 F7 C"duex.fan7"
 M950 F8 C"duex.fan8"
 
-; Filament sensors
-
-M591 D0 P7 C"e0stop" S0 ; Extruder 0 L7 R50:250 E3
-M591 D1 P7 C"e1stop" S0 ; Extruder 1 L7 R50:250 E3
-M591 D2 P7 C"xstop" S0  ; Extruder 2 L7 R10:500 E3
-M591 D3 P7 C"ystop" S0  ; Extruder 3 L7 R50:250 E3
-
-M955 P0 I25 C"spi.cs6+spi.cs5" ; Accelerometer all wires connected to temp DB connector, no temperature daughterboard
-
 M106 P1 S255 H1 T70				; T0 HE
 M106 P2 S0						; T0 PCF
 M106 P3 S255 H2 T70 			; T1 HE
@@ -122,8 +113,15 @@ M106 P6 S0 						; T2 PCF
 M106 P7 S255 H4 T70				; T3 HE
 M106 P8 S0						; T3 PCF
 
+; Filament sensors
+M591 D0 P7 C"e0stop" S0 ; Extruder 0 L7 R50:250 E3
+M591 D1 P7 C"e1stop" S0 ; Extruder 1 L7 R50:250 E3
+M591 D2 P7 C"xstop" S0  ; Extruder 2 L7 R10:500 E3
+M591 D3 P7 C"ystop" S0  ; Extruder 3 L7 R50:250 E3
 
-M593 P"zvddd" F46.6 ; cancel ringing at ZVDDD 46.6Hz original: ZVD at 42.2Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
+; Accelerometer
+M955 P0 I25 C"spi.cs6+spi.cs5" 	; Accelerometer all wires connected to temp DB connector, no temperature daughterboard
+M593 P"zvddd" F46.6 			; cancel ringing at ZVDDD 46.6Hz original: ZVD at 42.2Hz (https://forum.e3d-online.com/threads/accelerometer-and-resonance-measurements-of-the-motion-system.3445/)
 ;M376 H15						; bed compensation taper
 
 ; tool offsets
@@ -138,16 +136,14 @@ G10 P2 X-8.42 Y38.61 Z-13.36 C0.00					; T2
 G10 P3 X13.76 Y51.28 Z-6.22 C0.00					; T3
 
 ; PID tune
-
-M307 H0 R0.130 K0.150:0.000 D10.00 E1.35 S1.00 B1			;BANGBANG tune Bed 
-M307 H1 R1.266 K0.213:0.197 D7.33 E1.35 S1.00 B0 V21.3	 	;PID tune T0  
-M307 H2 R1.161 K0.211:0.160 D7.64 E1.35 S1.00 B0 V21.3		;PID tune T1 
-M307 H3 R1.071 K0.221:0.041 D6.33 E1.35 S1.00 B0 V21.3		;PID tune T2
-M307 H4 R3.886 K0.463:0.379 D2.58 E1.35 S1.00 B0 V21.3		;PID tune T3
+M307 H0 R0.130 K0.150:0.000 D10.00 E1.35 S1.00 B1			; BANGBANG tune Bed 
+M307 H1 R1.266 K0.213:0.197 D7.33 E1.35 S1.00 B0 V21.3	 	; PID tune T0  
+M307 H2 R1.161 K0.211:0.160 D7.64 E1.35 S1.00 B0 V21.3		; PID tune T1 
+M307 H3 R1.071 K0.221:0.041 D6.33 E1.35 S1.00 B0 V21.3		; PID tune T2
+M307 H4 R3.886 K0.463:0.379 D2.58 E1.35 S1.00 B0 V21.3		; PID tune T3
 
 ; Pressure advance
-
-M572 D0:1 S0.041 					; pressure advance T0 & T1 DD HEMERA
+M572 D0:1 S0.045 					; pressure advance T0 & T1 DD HEMERA
 M572 D2 S0.62 						; pressure advance T2 BWDN HEMERA
 M572 D3 S0.053 						; pressure advance T3 OMNIADROP V2.1
 
