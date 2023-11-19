@@ -8,14 +8,16 @@
 ;G1 X-37.5 Y176 F50000
 
 ;Prime
-G92 E0
-G1 E5 F200
-G1 F50
-G1 E5 F50
-G1 E-2 F200
-G92 E0
-G4 S6
-
+if move.axes[1].machinePosition > 170
+	G91
+	G1 Y50 F3000
+	G1 E5 F400
+	G1 E10 F200
+	G1 E-2 F1000
+	G1 Y-50 F3000
+	G90
+else
+	echo
 ;Run Out
 ;G1 X-37.5 Y160 F50000
 
