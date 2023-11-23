@@ -33,4 +33,4 @@ last "stable" Superslicer release (has working vase mode (not working arachne))
 https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.5
 
 Find the latest PrusaSlicer:
-https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.6.1
+https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.7.0
