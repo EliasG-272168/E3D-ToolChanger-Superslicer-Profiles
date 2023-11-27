@@ -8,7 +8,7 @@
 ;G1 X-37.5 Y176 F50000
 
 ;Prime
-if move.axes[1].machinePosition > 170
+if move.axes[1].machinePosition > 150
 	G91
 	G1 Y50 F3000
 	G1 E5 F400
