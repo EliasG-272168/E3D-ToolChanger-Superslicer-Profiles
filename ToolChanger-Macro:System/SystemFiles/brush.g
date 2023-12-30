@@ -4,7 +4,7 @@
 ;G90
 
 ;brush in
-if move.axes[1].machinePosition > 150
+if move.axes[1].machinePosition > 50
 	G91
 	G1 Y32 F50000
 	G1 Y-25 	F5000

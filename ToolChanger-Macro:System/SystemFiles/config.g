@@ -114,10 +114,10 @@ M106 P7 S255 H4 T70				; T3 HE
 M106 P8 S0						; T3 PCF
 
 ; Filament sensors
-M591 D0 P7 C"e0stop" S0 ; Extruder 0 L7 R50:250 E3
-M591 D1 P7 C"e1stop" S0 ; Extruder 1 L7 R50:250 E3
-M591 D2 P7 C"xstop" S0  ; Extruder 2 L7 R10:500 E3
-M591 D3 P7 C"ystop" S0  ; Extruder 3 L7 R50:250 E3
+M591 D0 P7 L7 C"e0stop" S0 ; Extruder 0 L7 R50:250 E3
+M591 D1 P7 L7 C"e1stop" S0 ; Extruder 1 L7 R50:250 E3
+M591 D2 P7 L7 C"xstop" S0  ; Extruder 2 L7 R10:500 E3
+M591 D3 P7 L7 C"ystop" S0  ; Extruder 3 L7 R50:250 E3
 
 ; Accelerometer
 M955 P0 I25 C"spi.cs6+spi.cs5" 	; Accelerometer all wires connected to temp DB connector, no temperature daughterboard
@@ -130,16 +130,16 @@ M593 P"zvddd" F46.6 			; cancel ringing at ZVDDD 46.6Hz original: ZVD at 42.2Hz 
 ; Volcano-tool: X-9 Y39 Z-13.5
 ; Hemera-tool: X20 Y43.5 Z-6
 
-G10 P0 X19.45 Y43.97 Z-5.28 C0.00					; T0
-G10 P1 X19.19 Y44.15 Z-5.52 C0.00					; T1
-G10 P2 X-8.42 Y38.61 Z-13.36 C0.00					; T2
-G10 P3 X13.76 Y51.28 Z-6.22 C0.00					; T3
+G10 P0 X19.67 Y44.07 Z-5.15 C0.00					; T0
+G10 P1 X19.10 Y44.24 Z-5.54 C0.00					; T1
+G10 P2 X-8.81 Y39.09 Z-13.16 C0.00					; T2
+G10 P3 X13.28 Y51.16 Z-6.22 C0.00					; T3
 
 ; PID tune
-M307 H0 R0.130 K0.150:0.000 D10.00 E1.35 S1.00 B1			; BANGBANG tune Bed 
-M307 H1 R1.266 K0.213:0.197 D7.33 E1.35 S1.00 B0 V21.3	 	; PID tune T0  
-M307 H2 R1.161 K0.211:0.160 D7.64 E1.35 S1.00 B0 V21.3		; PID tune T1 
-M307 H3 R1.071 K0.221:0.041 D6.33 E1.35 S1.00 B0 V21.3		; PID tune T2
+M307 H0 R0.130 K0.150:0.000 D10.00 E1.35 S1.00 B1			; BANGBANG tune Bed  
+M307 H1 R2.544 K0.229:0.469 D6.86 E1.35 S1.00 B0 V21.2	 	; PID tune T0  
+M307 H2 R2.623 K0.225:0.428 D6.94 E1.35 S1.00 B0 V21.2		; PID tune T1 
+M307 H3 R1.495 K0.238:0.012 D6.92 E1.35 S1.00 B0 V21.3		; PID tune T2
 M307 H4 R3.886 K0.463:0.379 D2.58 E1.35 S1.00 B0 V21.3		; PID tune T3
 
 ; Pressure advance

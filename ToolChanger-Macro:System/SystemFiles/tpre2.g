@@ -18,7 +18,7 @@ M98 P"/macros/Coupler - Lock"
 
 M566 X480 Y480 ; Set maximum instantaneous speed changes (mm/min)
 M201 X4000 Y4000 ; Set accelerations (mm/s^2)
-M220 S120 ;Speed set
+M220 S75 ;Speed set
 
 ;WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING! WARNING!
 ;if you are using non-standard length hotends ensure the bed is lowered enough BEFORE undocking the tool!

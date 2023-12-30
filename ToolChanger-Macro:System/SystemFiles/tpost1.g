@@ -2,7 +2,7 @@
 ; called after tool 1 has been selected
 
 ;heatup
-;;M116 P1
+;M116 P1
 
 ;prime nozzle
 ;M98 P"prime.g"

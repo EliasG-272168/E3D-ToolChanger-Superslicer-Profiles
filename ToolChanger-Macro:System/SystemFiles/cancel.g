@@ -1,10 +1,11 @@
 ; purge tool
 ;M98 P"purge.g"
 
-M106 S0 ;fan off
+M106 S0.0 ;fan off
 
 ; park tool
 T-1
+M220 S100 ;Speed set
 
 M591 D0 ; Filament Sensor T0
 M591 D1 ; Filament Sensor T1
