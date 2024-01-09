@@ -27,7 +27,7 @@ Final note, my T2 has a nozzle diameter of 0.8. Make sure to change any nozzle d
 
 
 Find the latest SuperSlicer:
-https://github.com/supermerill/SuperSlicer/releases/tag/2.5.59.2
+https://github.com/supermerill/SuperSlicer/releases/tag/2.5.59.6
 
 last "stable" Superslicer release (has working vase mode (not working arachne))
 https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.5
