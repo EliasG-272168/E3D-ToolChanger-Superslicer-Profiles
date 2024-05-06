@@ -23,10 +23,7 @@ Under "Printer setiings" and "General", there will be a tab to set the bed shape
 
 
 Find the latest SuperSlicer:
-https://github.com/supermerill/SuperSlicer/releases/tag/2.5.59.8
-
-last "stable" Superslicer release (has working vase mode (not working arachne))
-https://github.com/supermerill/SuperSlicer/releases/tag/2.4.58.5
+https://github.com/supermerill/SuperSlicer/releases/tag/2.5.59.9
 
 Find the latest PrusaSlicer:
 https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.7.4
