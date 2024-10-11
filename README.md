@@ -26,4 +26,4 @@ Find the latest SuperSlicer:
 https://github.com/supermerill/SuperSlicer/releases/tag/2.5.60.0
 
 Find the latest PrusaSlicer:
-https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.8.0
+https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.8.1
