@@ -3,7 +3,7 @@ I upload my Superslicer Configs for the E3D toolchanger
 
 **IMPORTANT NOTES FOR BOTH PRUSA & SUPERSLICER:**
 
-I recommend using Prusaslicer until Merill releases the 2.7 merge
+I recommend using Prusaslicer until Merill releases the +2.7 merge
 Im running 0.4mm nozzles on all tools
 In the "custom G-code" section, the brush.g can be changed/removed as the macro is specific to my machine and you may need more/less.
 The brush.g command can be found in "Start G-code" and "Tool change G-code".
@@ -19,11 +19,8 @@ Under "Printer setiings" and "General", there will be a tab to set the bed shape
 
 <img width="551" alt="Bildschirmfoto 2023-06-21 um 00 52 24" src="https://github.com/Victini-0001/E3D-ToolChanger-Superslicer-Profiles/assets/59373347/b336d351-5277-42c9-a769-0f42bd8b6fde">
 
-**IN PRUSASLICER, GENERATED WIDTHS USING % IS BASED ON LAYER HEIGHT ; DIFFERENT NOZZLE SIZE COMBINATIONS WONT WORK**
-
-
 Find the latest SuperSlicer:
 https://github.com/supermerill/SuperSlicer/releases/tag/2.5.60.0
 
 Find the latest PrusaSlicer:
-https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.8.1
+https://github.com/prusa3d/PrusaSlicer/releases/tag/version_2.9.0
